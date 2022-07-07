@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="container-fluid">
+			<div class="contact-form">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+						<h2 class="form-title">Add Passenger Details</h2>
+					</div>
+				</div>
+				<div class="row">
+	
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						
+						<form class="form" th:action="@{/passenger}" th:object="${passenger}" method="POST">
+							<div class="form-group">
+								<label class="form-label" id="nameLabel" for="passangerId"></label> 
+								<input type="text"
+									   class="form-control"
+									   name="passangerId"
+									   placeholder="Enter passenger id" 
+									   tabindex="1" />
+							</div>
+	
+							<div class="form-group">
+								<label class="form-label" id="passangerName" for="passangerName"></label> 
+								<input type="text"
+									   class="form-control"
+									   name="passangerName"
+									   placeholder="Enter passenger name" 
+									   tabindex="2">
+							</div>
+	
+							<div class="form-group mt-2">
+								  <label for="exampleFormControlInput1" class="form-label"></label>
+								  <select name="passangerGender" class="form-select passanger-style" aria-label=".Default select example">
+										<option value="MALE">MALE</option>
+										<option value="FEMALE">FEMALE</option>
+								  </select>
+							</div>
+							
+							<div class="form-group">
+								<label class="form-label" id="passangerAge" for="passangerAge"></label> 
+								<input type="text"
+									   class="form-control"
+									   name="passangerAge"
+									   placeholder="Enter passenger age">
+							</div>
+							
+							<div class="text-center margin-top-25">
+								<button type="submit" class="btn btn-green">Add Passenger</button>
+							</div>
+	
+						</form>
+						<!-- End form -->
+	
+					</div>
+					<!-- End col -->
+	
+				</div>
+				<!-- End row -->
+
+			</div>
+		</div>
+		<!-- End container -->
+	</section>
+</body>
+</html>

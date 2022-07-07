@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="eng" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title th:text=${title}></title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="contact-form">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+						<h2 class="form-title">View Flights</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">No</th>
+									<th scope="col">Name</th>
+									<th scope="col">Model</th>
+									<th scope="col">Capacity</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="flight: ${flights}">
+									<td th:text="${flight.flightNo}"></td>
+									<td th:text="${flight.carrierName}"></td>
+									<td th:text="${flight.flightModel}"></td>
+									<td th:text="${flight.seatCapacity}"></td>
+								</tr>
+							</tbody>
+						</table>
+						<a class="link-style" th:href="@{/addFlight}">Add Flight</a><br> 
+						<a class="link-style" th:href="@{/viewPassenger}">Show passenger</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+</body>
+</html>

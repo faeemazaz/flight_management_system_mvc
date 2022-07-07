@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="container-fluid">
+			<div class="contact-form">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+						<h2 class="form-title">Add Flights</h2>
+					</div>
+				</div>
+				<div class="row">
+	
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						
+						<form class="form" th:action="@{/flight}" th:object="${flight}"  method="POST">
+							<div class="form-group">
+								<label class="form-label" id="nameLabel" for="flightNo"></label> 
+								<input type="text"
+									   class="form-control"
+									   name="flightNo"
+									   placeholder="Enter the flight number" 
+									   tabindex="1" />
+							</div>
+	
+							<div class="form-group">
+								<label class="form-label" id="nickname" for="carrierName"></label> 
+								<input type="text"
+									   class="form-control"
+									   name="carrierName"
+									   placeholder="Enter flight name" 
+									   tabindex="2">
+							</div>
+	
+							<div class="form-group">
+								<label class="form-label" id="subjectLabel" for="flightModel"></label>
+								<input type="text" 
+									   class="form-control"
+									   name="flightModel" 
+									   placeholder="Enter Flight model" 
+									   tabindex="3">
+							</div>
+	
+							<div class="form-group">
+								<label class="form-label" id="email" for="seatCapacity"></label>
+								<input type="text" 
+									   name="seatCapacity" 
+									   class="form-control"
+									   placeholder="Enter seat capacity" 
+									   tabindex="4" />
+							</div>
+							
+							<div class="text-center margin-top-25">
+								<button type="submit" class="btn btn-green">Add Flight</button>
+							</div>
+	
+						</form>
+						<!-- End form -->
+	
+					</div>
+					<!-- End col -->
+	
+				</div>
+				<!-- End row -->
+
+			</div>
+		</div>
+		<!-- End container -->
+	</section>
+</body>
+</html>

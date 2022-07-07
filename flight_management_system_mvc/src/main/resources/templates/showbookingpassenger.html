@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="eng" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title th:text=${title}></title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="contact-form">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+						<h2 class="form-title">Show Bookings With Passenger Details</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">No</th>
+									<th scope="col">Date</th>
+									<th scope="col">Total passenger</th>
+									<th scope="col">Passenger name</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="booking: ${bookings}">
+									<td th:text="${booking.bookingId}"></td>
+									<td th:text="${booking.bookingDate}"></td>
+									<td th:text="${booking.noOfPassengers}"></td>
+									<td th:text="${booking.passanger.passangerName}"></td>
+								</tr>
+							</tbody>
+						</table>
+						<a class="link-style" th:href="@{/addPassengerBooking}">Add booking with passenger</a><br>
+						<a class="link-style" th:href="@{/viewPassenger}">Show passenger</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+</body>
+</html>
